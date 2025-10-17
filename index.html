@@ -1,0 +1,303 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Pineapple Wine & Vinegar — Health Benefits</title>
+  <style>
+    :root{
+      --bg: linear-gradient(180deg,#ffc248,#75ffca);
+      --accent: #ff7a18;
+      --accent-2: #4caf50;
+      --muted: #375797;
+      --glass: rgb(255, 187, 85);
+      --card-shadow: 0 8px 24px rgba(2,6,23,0.08);
+      --radius: 14px;
+      font-family: Inter, ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
+    }
+
+    *{box-sizing:border-box}
+    html,body{height:100%;margin:0;background:var(--bg);color:#061226}
+
+    /* Top nav */
+    .topbar{position:sticky;top:0;backdrop-filter: blur(6px);background:linear-gradient(90deg, rgba(255,255,255,0.6), rgba(255,255,255,0.55));box-shadow:0 2px 6px rgba(7,10,25,0.06);display:flex;align-items:center;gap:16px;padding:12px 20px;z-index:30}
+    .logo{display:flex;align-items:center;gap:12px;font-weight:700}
+    .logo .mark{width:42px;height:42px;border-radius:10px;background:linear-gradient(135deg,var(--accent),#ffb86b);display:flex;align-items:center;justify-content:center;color:white;font-size:20px}
+
+    nav{display:flex;gap:8px;align-items:center;margin-left:8px}
+    .nav-btn{padding:8px 12px;border-radius:10px;border:0;background:transparent;font-weight:600;color:var(--muted);cursor:pointer}
+    .nav-btn.active{background:var(--glass);color:#1f54af;box-shadow:var(--card-shadow)}
+
+    .tools{margin-left:auto;display:flex;gap:8px}
+    .icon-btn{border:0;background:transparent;padding:8px;border-radius:10px;cursor:pointer}
+
+    /* Layout */
+    .container{max-width:1100px;margin:28px auto;padding:20px}
+    .hero{display:grid;grid-template-columns:1fr 380px;gap:20px;align-items:start}
+
+    .card{background:linear-gradient(180deg,rgb(154, 226, 112),rgb(255, 200, 97));border-radius:var(--radius);box-shadow:var(--card-shadow);padding:18px}
+
+    .title{font-size:22px;margin:0 0 6px}
+    .lead{color:var(--muted);margin:0 0 10px}
+
+    /* side quick menu */
+    .side{position:sticky;top:86px}
+    .menu{display:flex;flex-direction:column;gap:8px}
+    /* menu buttons: subtle fading gradient on hover and when active */
+    .menu button{
+      padding:10px;border-radius:10px;border:1px solid rgb(24, 72, 156);background:white;cursor:pointer;text-align:left;
+      position:relative;overflow:hidden;color:var(--muted);transition:color .25s ease, transform .12s ease, border-color .25s ease;
+    }
+    /* decorative animated gradient layer (keeps text on top for accessibility) */
+    .menu button::before{
+      content:'';position:absolute;inset:0;border-radius:10px;z-index:0;
+      background:linear-gradient(90deg,#ff9d00,#ff0059,#00ff84);background-size:200% 200%;opacity:0;transform:translateZ(0);
+      transition:opacity .35s ease, filter .35s ease;
+      pointer-events:none;
+    }
+    .menu button > *{position:relative;z-index:1}
+    .menu button:hover::before{opacity:0.28;filter:blur(0.6px)}
+    .menu button:active{transform:scale(.996)}
+    /* active state uses a slightly stronger accent and a soft glow */
+    .menu button.active::before{opacity:0.46;filter:brightness(.98)}
+    .menu button.active{border-color:transparent;box-shadow:0 8px 24px rgba(101,33,133,0.08);color:#1f54af}
+
+    /* gentle movement for the gradient to make the fade feel alive (low intensity) */
+    @keyframes gradientMove{0%{background-position:0% 50%}50%{background-position:100% 50%}100%{background-position:0% 50%}}
+    .menu button::before{animation:gradientMove 6s ease-in-out infinite}
+
+    /* content sections */
+    .content{margin-top:12px;display:flex;flex-direction:column;gap:14px}
+    .section{display:none;animation:fadeIn .28s ease forwards;padding:12px;border-radius:12px}
+    .section.show{display:block}
+    .benefits{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:12px}
+    .benefit{background:linear-gradient(180deg,rgba(228, 164, 45, 0.973),rgba(255, 237, 39, 0.9));padding:12px;border-radius:10px;border:1px solid rgba(6,18,38,0.04)}
+    .benefit h4{margin:0 0 6px}
+    .badge{display:inline-block;padding:6px 8px;border-radius:999px;font-weight:700;font-size:12px}
+
+    /* footer */
+    footer{margin-top:20px;text-align:center;color:var(--muted);font-size:13px}
+
+    /* small screens */
+    @media (max-width:880px){
+      .hero{grid-template-columns:1fr;}
+      .logo .mark{width:36px;height:36px}
+      .side{position:static}
+      nav{display:none}
+    }
+
+    @keyframes fadeIn{from{opacity:0;transform:translateY(6px)}to{opacity:1;transform:none}}
+
+    /* interactive highlight */
+    .highlight{background:linear-gradient(90deg,#f7ca36,#83f37b);border:1px solid rgba(0,0,0,0.03)}
+
+    /* nice table */
+    table{width:100%;border-collapse:collapse}
+    th,td{padding:8px;border-bottom:1px solid #f1f5f9;text-align:left}
+    th{font-weight:700}
+  </style>
+</head>
+<body>
+  <header class="topbar">
+    <div class="logo">
+      <div class="mark">🍍</div>
+      <div>
+        <div style="font-size:14px">Pineapple Lab</div>
+        <div style="font-size:12px;color:var(--muted);margin-top:2px">Wine • Vinegar • Benefits</div>
+      </div>
+    </div>
+
+    <nav aria-label="Main navigation">
+      <button class="nav-btn active" data-target="overview">Overview</button>
+      <button class="nav-btn" data-target="wine">Pineapple Wine</button>
+      <button class="nav-btn" data-target="vinegar">Pineapple Vinegar</button>
+      <button class="nav-btn" data-target="compare">Compare</button>
+      <button class="nav-btn" data-target="about">About</button>
+    </nav>
+
+    <div class="tools">
+      <button title="Print" class="icon-btn" id="printBtn">🖨️</button>
+      <button title="Toggle contrast" class="icon-btn" id="contrastBtn">🌓</button>
+    </div>
+  </header>
+
+  <main class="container">
+    <div class="hero">
+      <section class="card">
+        <h1 class="title">Health benefits of Pineapple Wine & Vinegar</h1>
+        <p class="lead">Quick, friendly guide to the potential nutritional and functional benefits — plus how they differ. Use the menu to switch sections.</p>
+
+        <div class="content" id="content">
+          <article id="overview" class="section show">
+            <h3>Overview</h3>
+            <p>Pineapple (Ananas comosus) is rich in vitamins, enzymes (notably bromelain), and organic acids. When fruit is fermented to <strong>wine</strong> or further transformed into <strong>vinegar</strong>, some properties change — fermentation can increase certain bioactive compounds and create beneficial organic acids (like acetic acid in vinegar).</p>
+            <p class="lead">Below are practical, generally-observed benefits for both products. This is informational — not medical advice.</p>
+          </article>
+
+          <article id="wine" class="section">
+            <h3>Pineapple Wine — Potential Benefits</h3>
+            <div class="benefits">
+              <div class="benefit">
+                <h4>Antioxidant content</h4>
+                <p>Pineapple wine retains vitamin C derivatives and polyphenols that can act as antioxidants.</p>
+              </div>
+
+              <div class="benefit">
+                <h4>Probiotic & fermentation byproducts</h4>
+                <p>Wild or controlled fermentation can introduce beneficial microbes and metabolites which may support gut microbial diversity (depends on production and whether pasteurized).</p>
+              </div>
+
+              <div class="benefit">
+                <h4>Digestive enzymes</h4>
+                <p>Bromelain (a proteolytic enzyme) may partially survive fermentation and help protein digestion, though heat/pasteurization reduces activity.</p>
+              </div>
+
+              <div class="benefit">
+                <h4>Lower sugar option</h4>
+                <p>Compared to fresh juice, properly fermented wine can have lower residual sugar — but alcohol adds calories, so consume moderately.</p>
+              </div>
+            </div>
+
+            <div style="margin-top:12px">
+              <strong>Notes:</strong>
+              <ul>
+                <li>Alcohol elsewhere affects health — wine provides ethanol which is not advised for minors or pregnant people. Keep consumption moderate.</li>
+                <li>Home-fermented beverages vary widely — hygiene and proper starter cultures matter for safety.</li>
+              </ul>
+            </div>
+          </article>
+
+          <article id="vinegar" class="section">
+            <h3>Pineapple Vinegar — Potential Benefits</h3>
+            <div class="benefits">
+              <div class="benefit">
+                <h4>Acetic acid & glycemic control</h4>
+                <p>Vinegar contains acetic acid, which has been associated with improved post-meal blood sugar control when taken with meals in some studies.</p>
+              </div>
+
+              <div class="benefit">
+                <h4>Antimicrobial properties</h4>
+                <p>Acetic acid has mild antimicrobial effects — that's why vinegar has long been used for food preservation and cleaning.</p>
+              </div>
+
+              <div class="benefit">
+                <h4>Prebiotic & polyphenols</h4>
+                <p>Depending on production method, "mother" vinegar can contain beneficial organic acids and leftover polyphenols that may support gut health.</p>
+              </div>
+
+              <div class="benefit">
+                <h4>Low-calorie flavoring</h4>
+                <p>Vinegar is a low-calorie way to add acidity and tang, helping reduce need for high-calorie dressings or salt.</p>
+              </div>
+            </div>
+
+            <div style="margin-top:12px">
+              <strong>Notes:</strong>
+              <ul>
+                <li>Concentrated vinegar is acidic — avoid undiluted frequent consumption to protect tooth enamel and esophagus.</li>
+                <li>Not a substitute for diabetes medication; talk to a healthcare provider before major diet changes.</li>
+              </ul>
+            </div>
+          </article>
+
+          <article id="compare" class="section">
+            <h3>Compare: Wine vs Vinegar</h3>
+            <table>
+              <thead>
+                <tr><th>Feature</th><th>Pineapple Wine</th><th>Pineapple Vinegar</th></tr>
+              </thead>
+              <tbody>
+                <tr><td>Main active</td><td>Alcohol + fermentation metabolites</td><td>Acetic acid + organic acids</td></tr>
+                <tr><td>Calories</td><td>Higher (alcohol calories)</td><td>Low</td></tr>
+                <tr><td>Glycemic effect</td><td>Varies — may be lower sugar but alcohol affects metabolism</td><td>May help blunt post-meal glucose spikes</td></tr>
+                <tr><td>Best use</td><td>Moderate beverage enjoyment</td><td>Condiment, health tonic (diluted)</td></tr>
+              </tbody>
+            </table>
+          </article>
+
+          <article id="about" class="section">
+            <h3>About this page</h3>
+            <p class="lead">This page is a friendly, educational overview of commonly-cited benefits of pineapple-derived fermented products. It is not medical advice. If you have health conditions, allergies, are pregnant or underage (note: the user is 16), consult a trusted adult and a healthcare professional before consuming alcoholic products.</p>
+            <p>Want to save a cheat-sheet? Click <button id="exportBtn" style="padding:6px 8px;border-radius:8px;border:0;background:#f3f4f6;cursor:pointer">Export as text</button>.</p>
+          </article>
+        </div>
+      </section>
+
+      <aside class="side">
+        <div class="card menu-card card" style="padding:12px;">
+          <div style="font-weight:700;margin-bottom:8px">Quick Menu</div>
+          <div class="menu" role="menu" aria-label="Sections">
+            <button class="active" data-target="overview">Overview</button>
+            <button data-target="wine">Pineapple Wine</button>
+            <button data-target="vinegar">Pineapple Vinegar</button>
+            <button data-target="compare">Compare</button>
+            <button data-target="about">About</button>
+          </div>
+        </div>
+
+        <div class="card" style="margin-top:12px;padding:12px;">
+          <div style="font-weight:700">Tips</div>
+          <ul style="color:var(--muted);margin-top:8px">
+            <li>Always dilute vinegar if using as a tonic (e.g., 1 tbsp in a glass of water).</li>
+            <li>Keep fermented beverages refrigerated after opening for safety.</li>
+            <li>Don't give alcoholic drinks to minors — it's unsafe and illegal in many places.</li>
+          </ul>
+        </div>
+      </aside>
+    </div>
+
+    <footer>
+      <div>Made for learning • Not medical advice • Use responsibly</div>
+    </footer>
+  </main>
+
+  <script>
+    // Simple navigation + menu syncing
+    const navBtns = document.querySelectorAll('.topbar .nav-btn');
+    const sideBtns = document.querySelectorAll('.menu button');
+    const sections = document.querySelectorAll('.section');
+
+    function switchTo(target){
+      // nav highlights
+      navBtns.forEach(b => b.classList.toggle('active', b.dataset.target === target));
+      sideBtns.forEach(b => b.classList.toggle('active', b.dataset.target === target));
+      // show section
+      sections.forEach(s => s.classList.toggle('show', s.id === target));
+      // small screens: scroll top of content
+      document.getElementById('content').scrollIntoView({behavior:'smooth'});
+    }
+
+    navBtns.forEach(b => b.addEventListener('click', ()=> switchTo(b.dataset.target)));
+    sideBtns.forEach(b => b.addEventListener('click', ()=> switchTo(b.dataset.target)));
+
+    // Print & contrast
+    document.getElementById('printBtn').addEventListener('click', ()=> window.print());
+    document.getElementById('contrastBtn').addEventListener('click', ()=>{
+      document.body.classList.toggle('high-contrast');
+      if(document.body.classList.contains('high-contrast')){
+        document.documentElement.style.setProperty('--bg','linear-gradient(180deg,#f0f7ff,#e6fff5)');
+      } else {
+        document.documentElement.style.setProperty('--bg','linear-gradient(180deg,#fffefc,#f7fcff)');
+      }
+    });
+
+    // Export cheat-sheet
+    document.getElementById('exportBtn').addEventListener('click', ()=>{
+      const texts = Array.from(document.querySelectorAll('.section.show')).map(s=> s.innerText.trim()).join('\n\n');
+      const blob = new Blob([texts], {type:'text/plain'});
+      const url = URL.createObjectURL(blob);
+      const a = document.createElement('a'); a.href = url; a.download = 'pineapple_cheatsheet.txt'; a.click(); URL.revokeObjectURL(url);
+    });
+
+    // Accessibility: allow keyboard switching using number keys 1-5
+    window.addEventListener('keydown', (e)=>{
+      if(document.activeElement && (document.activeElement.tagName === 'INPUT' || document.activeElement.tagName === 'TEXTAREA')) return;
+      const map = ['overview','wine','vinegar','compare','about'];
+      if(e.key >= '1' && e.key <= '5'){
+        const idx = parseInt(e.key,10)-1;
+        switchTo(map[idx]);
+      }
+    });
+  </script>
+</body>
+</html>
