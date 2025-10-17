@@ -83,6 +83,42 @@
       font-size: 0.9em;
       background-color: rgba(0,0,0,0.1);
     }
+    /* 🌈 Hover or active color mode effect */
+body:hover, body:active {
+  background: linear-gradient(180deg, #2b5876, #4e4376);
+  color: #ffffff;
+  transition: all 0.8s ease;
+}
+
+body:hover .card,
+body:active .card {
+  background: rgba(255, 255, 255, 0.1);
+  color: #ffffff;
+  box-shadow: 0 8px 30px rgba(255,255,255,0.1);
+}
+
+body:hover .nav-btn,
+body:active .nav-btn,
+body:hover .menu button,
+body:active .menu button {
+  background: rgba(255,255,255,0.15);
+  color: #fff;
+  border-color: rgba(255,255,255,0.3);
+}
+
+body:hover a,
+body:active a,
+body:hover .lead,
+body:active .lead {
+  color: #f0ffcc;
+}
+
+body:hover th, 
+body:hover td,
+body:active th, 
+body:active td {
+  color: #fff;
+}
   </style>
 </head>
 <body>
