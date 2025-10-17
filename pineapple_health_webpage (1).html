@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Pineapple Wine & Vinegar — Health Benefits</title>
+  <style>
+    :root{
+      --bg: linear-gradient(180deg,#fffefc,#f7fcff);
+      --accent: #ff7a18;
+      --accent-2: #4caf50;
+      --muted: #6b7280;
+      --glass: rgba(255,255,255,0.7);
+      --card-shadow: 0 8px 24px rgba(2,6,23,0.08);
+      --radius: 14px;
+      font-family: Inter, ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
+    }
+
+    *{box-sizing:border-box}
+    html,body{height:100%;margin:0;background:var(--bg);color:#061226;transition: background 0.5s ease, color 0.5s ease;}
+
+    /* Hover background mode */
+    body:hover {
+      --bg: linear-gradient(180deg,#222831,#393e46);
+      color: #f9fafb;
+    }
+
+    /* Top nav */
+    .topbar{position:sticky;top:0;backdrop-filter: blur(6px);background:linear-gradient(90deg, rgba(255,255,255,0.6), rgba(255,255,255,0.55));box-shadow:0 2px 6px rgba(7,10,25,0.06);display:flex;align-items:center;gap:16px;padding:12px 20px;z-index:30;transition: background 0.5s ease, color 0.5s ease;}
+    body:hover .topbar{background:linear-gradient(90deg,rgba(57,62,70,0.9),rgba(34,40,49,0.9));color:#f9fafb;}
+
+    .logo{display:flex;align-items:center;gap:12px;font-weight:700}
+    .logo .mark{width:42px;height:42px;border-radius:10px;background:linear-gradient(135deg,var(--accent),#ffb86b);display:flex;align-items:center;justify-content:center;color:white;font-size:20px;transition: transform 0.3s ease;}
+    body:hover .logo .mark{transform:rotate(15deg);background:linear-gradient(135deg,#00adb5,#ffdd57);}
+
+    nav{display:flex;gap:8px;align-items:center;margin-left:8px}
+    .nav-btn{padding:8px 12px;border-radius:10px;border:0;background:transparent;font-weight:600;color:var(--muted);cursor:pointer;transition: background 0.3s ease,color 0.3s ease;}
+    .nav-btn.active{background:var(--glass);color:#061226;box-shadow:var(--card-shadow)}
+    body:hover .nav-btn.active{color:#f9fafb;background:rgba(255,255,255,0.1)}
+
+    .tools{margin-left:auto;display:flex;gap:8px}
+    .icon-btn{border:0;background:transparent;padding:8px;border-radius:10px;cursor:pointer;color:inherit;}
+
+    /* Layout */
+    .container{max-width:1100px;margin:28px auto;padding:20px;transition:color 0.5s ease;}
+
+    .hero{display:grid;grid-template-columns:1fr 380px;gap:20px;align-items:start}
+
+    .card{background:linear-gradient(180deg,rgba(255,255,255,0.9),rgba(255,255,255,0.85));border-radius:var(--radius);box-shadow:var(--card-shadow);padding:18px;transition: background 0.5s ease, color 0.5s ease;}
+    body:hover .card{background:rgba(57,62,70,0.9);color:#f9fafb;}
+
+    .title{font-size:22px;margin:0 0 6px}
+    .lead{color:var(--muted);margin:0 0 10px;transition:color 0.5s ease;}
+    body:hover .lead{color:#e0e0e0;}
+
+    .side{position:sticky;top:86px}
+    .menu{display:flex;flex-direction:column;gap:8px}
+    .menu button{padding:10px;border-radius:10px;border:1px solid rgba(6,18,38,0.06);background:white;cursor:pointer;text-align:left;transition: background 0.5s ease,color 0.5s ease;}
+    .menu button.active{border-color:rgba(79,70,229,0.12);box-shadow:0 6px 18px rgba(99,102,241,0.08)}
+    body:hover .menu button{background:#393e46;color:#f9fafb;}
+
+    .content{margin-top:12px;display:flex;flex-direction:column;gap:14px}
+    .section{display:none;animation:fadeIn .28s ease forwards;padding:12px;border-radius:12px}
+    .section.show{display:block}
+    .benefits{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:12px}
+    .benefit{background:linear-gradient(180deg,rgba(255,255,255,0.98),rgba(255,255,255,0.9));padding:12px;border-radius:10px;border:1px solid rgba(6,18,38,0.04);transition:background 0.5s ease,color 0.5s ease;}
+    body:hover .benefit{background:rgba(57,62,70,0.9);color:#f9fafb;}
+
+    footer{margin-top:20px;text-align:center;color:var(--muted);font-size:13px;transition:color 0.5s ease;}
+    body:hover footer{color:#e0e0e0;}
+
+    @media (max-width:880px){
+      .hero{grid-template-columns:1fr;}
+      .logo .mark{width:36px;height:36px}
+      .side{position:static}
+      nav{display:none}
+    }
+
+    @keyframes fadeIn{from{opacity:0;transform:translateY(6px)}to{opacity:1;transform:none}}
+
+    table{width:100%;border-collapse:collapse}
+    th,td{padding:8px;border-bottom:1px solid #f1f5f9;text-align:left}
+    th{font-weight:700}
+  </style>
+</head>
+<body>
+  <header class="topbar">
+    <div class="logo">
+      <div class="mark">🍍</div>
+      <div>
+        <div style="font-size:14px">Pineapple Lab</div>
+        <div style="font-size:12px;color:var(--muted);margin-top:2px">Wine • Vinegar • Benefits</div>
+      </div>
+    </div>
+  </header>
+
+  <main class="container">
+    <h1 class="title">Hover anywhere to change background and text colors 🍍</h1>
+    <p class="lead">Move your cursor over the page to see a dark mode style appear automatically.</p>
+  </main>
+</body>
+</html>
